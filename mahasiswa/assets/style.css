@@ -1,0 +1,206 @@
+/* =====================================================
+   assets/style.css : Tampilan sederhana, bersih, responsif
+   ===================================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --danger: #dc2626;
+    --danger-dark: #b91c1c;
+    --dark: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f1f5f9;
+    --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.main-content { flex: 1; padding-top: 24px; padding-bottom: 24px; }
+
+/* ---------- Top bar ---------- */
+.topbar { background: var(--dark); color: var(--white); }
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.brand { color: var(--white); font-size: 1.15rem; font-weight: 600; }
+.brand:hover { text-decoration: none; }
+
+.topbar-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+
+.lang-switch { display: flex; gap: 6px; font-size: 0.9rem; color: #94a3b8; }
+.lang-switch a { color: #cbd5e1; font-weight: 600; }
+.lang-switch a.active { color: var(--white); text-decoration: underline; }
+
+.user-info { font-size: 0.9rem; color: #cbd5e1; }
+
+.inline-form { display: inline; margin: 0; }
+
+/* ---------- Tombol ---------- */
+.btn {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2;
+    font-family: inherit;
+}
+.btn:hover { text-decoration: none; }
+
+.btn-primary { background: var(--primary); color: var(--white); }
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-danger { background: var(--danger); color: var(--white); }
+.btn-danger:hover { background: var(--danger-dark); }
+
+.btn-outline { background: var(--white); color: var(--dark); border-color: var(--border); }
+.btn-outline:hover { background: var(--bg); }
+
+.btn-light { background: #334155; color: var(--white); }
+.btn-light:hover { background: #475569; }
+
+.btn-small { padding: 6px 12px; font-size: 0.85rem; }
+
+/* ---------- Kartu ---------- */
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.card-header h1 { margin: 0; font-size: 1.4rem; }
+
+.total-info { color: var(--muted); font-size: 0.9rem; margin: 12px 0 0; }
+
+/* ---------- Alert / flash ---------- */
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+}
+.alert-success { background: #dcfce7; color: #166534; border-color: #86efac; }
+.alert-error   { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+
+/* ---------- Tabel ---------- */
+.table-responsive { width: 100%; overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+
+th, td {
+    padding: 11px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.93rem;
+    vertical-align: middle;
+}
+
+thead th { background: #f8fafc; font-weight: 600; white-space: nowrap; }
+tbody tr:hover { background: #f8fafc; }
+
+.text-center { text-align: center; }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.empty-row { text-align: center; color: var(--muted); padding: 28px 12px; }
+
+/* ---------- Form ---------- */
+.form-group { margin-bottom: 18px; }
+
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.hint { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+
+.has-error input,
+.has-error select { border-color: var(--danger); }
+
+.error-text { display: block; color: var(--danger); font-size: 0.85rem; margin-top: 4px; }
+
+.form-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+.form-card { max-width: 640px; margin: 0 auto; }
+
+/* ---------- Halaman login ---------- */
+.auth-card { max-width: 400px; margin: 40px auto 0; }
+.auth-card h1 { margin-top: 0; font-size: 1.5rem; }
+.auth-card .subtitle { color: var(--muted); margin-top: -6px; margin-bottom: 20px; }
+.auth-card .btn-block { width: 100%; padding: 11px; }
+.demo-hint { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 16px; }
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    padding: 16px 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 600px) {
+    .topbar-inner { flex-direction: column; align-items: flex-start; }
+    .card { padding: 16px; }
+    .card-header h1 { font-size: 1.2rem; }
+    .form-actions .btn { flex: 1; }
+}
